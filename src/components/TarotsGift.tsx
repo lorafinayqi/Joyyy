@@ -27,10 +27,9 @@ const TarotsGift = ({
 
   return (
     <div className="flex flex-col items-center gap-6 p-4 text-center">
-      <h2 className="text-3xl text-primary font-bold">The Tarot's Gift</h2>
+      <h2 className="text-3xl text-primary font-bold">Hadiah kecil</h2>
       <p className="text-lg text-primary mb-4 max-w-lg">
-        Three mystical charms have appeared. Each holds a special meaning for
-        our journey together.
+        Sebelumnya makasih ya. Terus… aku ada hadiah kecil buat tahun ini, sekalian ucapan makasih buat tahun lalu. Nggak seberapa, tapi ya semoga nggak mengecewakan.
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-4xl px-2">
@@ -48,11 +47,8 @@ const TarotsGift = ({
             />
           </div>
           <h3 className="text-lg sm:text-xl font-bold text-primary">
-            Eternal Scroll
+            Catatan Kecil
           </h3>
-          <p className="text-sm text-gray-600">
-            Represents a love letter or a hidden message from destiny.
-          </p>
         </div>
 
         <div
@@ -68,10 +64,7 @@ const TarotsGift = ({
               className="w-14 h-14 sm:w-16 sm:h-16 object-contain rounded-md"
             />
           </div>
-          <h3 className="text-lg sm:text-xl font-bold text-primary">Key</h3>
-          <p className="text-sm text-gray-600">
-            Symbolizes unlocking emotions, trust, or the future together.
-          </p>
+          <h3 className="text-lg sm:text-xl font-bold text-primary">Harapan</h3>
         </div>
 
         <div
@@ -89,17 +82,14 @@ const TarotsGift = ({
             />
           </div>
           <h3 className="text-lg sm:text-xl font-bold text-primary">
-            Endless Love
+            Catatan sunyi
           </h3>
-          <p className="text-sm text-gray-600">
-            Represents deep, unbreakable love and unity.
-          </p>
         </div>
       </div>
 
       {allCharmsVisited && (
-        <button onClick={onNext} className="btn btn-primary mt-6">
-          Continue
+        <button onClick={onNext} className="btn btn-primary font-bold text-white mt-6">
+          Selanjutnya...
         </button>
       )}
     </div>

@@ -16,8 +16,7 @@ export const CardRevealer = ({
   onFlip,
 }: CardRevealerProps) => {
   const [isFlipped, setIsFlipped] = useState(false);
-  if (width == "w-1/2") {
-  }
+
   const handleClick = () => {
     if (!isFlipped) {
       setIsFlipped(true);
@@ -26,7 +25,7 @@ export const CardRevealer = ({
   };
 
   return (
-    <div className={`max-w-[300px] flex flex-col items-center gap-4`}>
+    <div className="max-w-[320px] flex flex-col items-center gap-4">
       <div
         className={`relative max-w-[500px] transition-transform duration-700 cursor-pointer preserve-3d ${
           isFlipped ? "rotate-y-180" : ""
@@ -44,13 +43,43 @@ export const CardRevealer = ({
           className="backface-hidden w-full absolute top-0 left-0 rotate-y-180 rounded-2xl"
         />
       </div>
+
       <div className="max-w-[500px]">
         {!isFlipped ? (
-          <div className="text-center p-4 border-2 border-dashed rounded-lg w-[340px] h-[130px] content-center font-black text-xl bg-primary text-primary-content">
-            Please click on the card
+          <div className="
+            text-center 
+            p-4 
+            border-2 border-dashed 
+            rounded-lg 
+            w-[340px] 
+            min-h-[130px] 
+            bg-primary 
+            text-white 
+            font-bold 
+            flex 
+            items-center 
+            justify-center
+            animate-pulse
+          ">
+            Buka
           </div>
         ) : (
-          <p className="text-center text-lg animate-fade-in border-2 border-dashed border-gray-300 rounded-lg w-[340px] h-[130px] bg-primary text-primary-content p-2 content-center">
+          <p className="
+            text-center 
+            text-sm 
+            animate-fade-in 
+            border-2 border-dashed border-gray-300 
+            rounded-lg 
+            w-[340px] 
+            min-h-[130px]
+            max-h-[200px]
+            bg-primary 
+            text-primary-content 
+            p-3
+            leading-relaxed
+            overflow-y-auto
+            break-words
+          ">
             {message}
           </p>
         )}

@@ -9,25 +9,23 @@ const WishMaker = ({ onBack }: WishMakerProps) => {
   const [visibleWishes, setVisibleWishes] = useState<number>(0);
 
   const wishes = [
-    "To share countless sunsets together",
-    "To make you smile every day",
-    "To build our dreams together",
-    "To create a lifetime of beautiful memories",
-    "To always be your safe place",
-    "To travel the world hand in hand",
-    "To fill our home with love and laughter",
-    "To support each other through every challenge",
-    "To grow old together with hearts forever young",
-    "To wake up next to you every morning",
-    "To celebrate every little victory with you",
-    "To be your greatest adventure",
-    "To write a love story that never ends",
-    "To always dance in the kitchen with you",
-    "To cherish you every single day",
-    "To love you more with every heartbeat",
-    "To always remind you how special you are",
-    "To hold your hand through every season of life",
-    "To be your best friend, always and forever",
+    "Aku harap kamu selalu sehat dan kuat. Jangan sampai sakit yaa, jgn bandel",
+    "Aku harap jalan yang kamu pilih selalu dipermudah, pelan-pelan nggk papa kok",
+    "Aku harap kamu nggak lupa untuk tidur, boongnya dah bnyak bgt inihh wkwkwk",
+    "Semoga kamu selalu nemuin hal kecil yang bikin senyum, walau dikit",
+    "Aku harap kamu tetep jadi kamu. Nggak usah berubah aneh-aneh, tapi kalo itu bikin kamu jadi lebih baik gapapa",
+    "Aku harap hari-hari yang kamu jalani lebih ringan dari yang kamu bayangkan",
+    "Jangan kebiasaan nyimpen masalah sendirian. Nyebelin tau",
+    "Jangan kebiasaan mikir aneh-aneh. Fokus jalanin aja",
+    "Makan yang bener. Jangan asal-asalan. Tubuhmu bukan mainan",
+    "Semoga kamu selalu kuat. Tapi ingat, istirahat juga perlu",
+    "Berhenti ngeremehin diri sendiri. Aku nggak milih orang sembarangan",
+    "Kamu boleh nggak percaya sama dirimu, tapi jangan larang aku buat percaya sama kamu",
+    "Kalau kamu ngerasa biasa aja, ya biar aku aja yang ngerasa kamu lebih.",
+    "Kamu nggak perlu bandingin diri sama siapa pun. Capek tau",
+    "Jangan ngeyel. Sesekali dengerin orang lain juga",
+    "Kalau lagi sedih, ya… nggak apa-apa. Tapi jangan kelamaan",
+    "Pokoknya… jaga diri. Udah, jangan dibantah.",
   ];
 
   useEffect(() => {
@@ -47,7 +45,7 @@ const WishMaker = ({ onBack }: WishMakerProps) => {
 
   return (
     <div className="flex flex-col items-center gap-8 p-4">
-      <h2 className="text-3xl text-primary font-bold">My Wishes For Us</h2>
+      <h2 className="text-3xl text-primary font-bold">Harapan ku</h2>
       <div className="w-full max-w-4xl h-[60vh] overflow-y-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {showWishes &&
@@ -62,16 +60,16 @@ const WishMaker = ({ onBack }: WishMakerProps) => {
         </div>
       </div>
       {!showWishes ? (
-        <button onClick={() => setShowWishes(true)} className="btn btn-primary">
-          See My Wishes
+        <button onClick={() => setShowWishes(true)} className="btn btn-primary font-bold text-white">
+          Harapan 
         </button>
       ) : visibleWishes < wishes.length ? (
         <div className="text-primary">
           Loading wishes... {visibleWishes}/{wishes.length}
         </div>
       ) : (
-        <button onClick={onBack} className="btn btn-primary">
-          Back to Charms
+        <button onClick={onBack} className="btn btn-primary font-bold text-white">
+          Kembali
         </button>
       )}
     </div>

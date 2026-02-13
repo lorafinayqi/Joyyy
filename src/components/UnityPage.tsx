@@ -9,18 +9,18 @@ const UnityPage = ({ onBack }: UnityPageProps) => {
   const [showFinalMessage, setShowFinalMessage] = useState(false);
   const [showBackButton, setShowBackButton] = useState(false);
   const [typedMessage, setTypedMessage] = useState("");
-  const finalMessage = "Endless love is not just spoken—it is felt, forever.";
+  const finalMessage = "Pokoknya jangan ragu dengan jalan yang kamu pilih";
 
   const messages = [
-    { text: "Love is trust", x: -140, y: -100 },
-    { text: "Love is laughter", x: 20, y: -80 },
-    { text: "Love is patience", x: -160, y: -20 },
-    { text: "Love is understanding", x: 0, y: 40 },
-    { text: "Love is comfort", x: -120, y: 80 },
-    { text: "Love is growth", x: 30, y: -40 },
-    { text: "Love is adventure", x: -100, y: -60 },
-    { text: "Love is home", x: -20, y: 100 },
-    { text: "Love is forever", x: -60, y: 20 },
+    { text: "Kamu bisa kokkk", x: -140, y: -100 },
+    { text: "Dikit lagi", x: 20, y: -80 },
+    { text: "Selalu tetap senyum ya", x: -160, y: -20 },
+    { text: "Jgn ngambek mulu", x: 0, y: 40 },
+    { text: "Jgn kebanyakan overthinking", x: -120, y: 80 },
+    { text: "Jgn minder", x: 30, y: -40 },
+    { text: "Jgn bandel", x: -100, y: -60 },
+    { text: "Tidur yang cukup", x: -20, y: 100 },
+    { text: "Makan yang banyakk", x: -60, y: 20 },
   ];
 
   useEffect(() => {
@@ -55,7 +55,7 @@ const UnityPage = ({ onBack }: UnityPageProps) => {
       onClick={handleScreenClick}
     >
       <h1 className="text-3xl text-primary font-bold mb-8">
-        A Love That Grows
+        Mangattt!!!
       </h1>
 
       <div className="relative w-full max-w-md h-[300px] flex items-center justify-center overflow-hidden">
@@ -86,15 +86,15 @@ const UnityPage = ({ onBack }: UnityPageProps) => {
             e.stopPropagation();
             onBack();
           }}
-          className="btn btn-primary mt-8 animate-fade-in"
+          className="btn btn-primary mt-8 animate-fade-in font-bold text-white"
         >
-          Back to Charms
+          Kembali
         </button>
       )}
 
       {!showFinalMessage && messageIndex < messages.length && (
         <div className="text-sm text-gray-500 mt-8 animate-pulse">
-          Tap anywhere to continue
+          Tekan dimana saja
         </div>
       )}
     </div>

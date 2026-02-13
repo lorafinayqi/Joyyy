@@ -14,26 +14,25 @@ import PromisesPage from "./components/PromisesPage";
 import ValentinePage from "./components/ValentinePage";
 import CongratulationsPage from "./components/CongratulationsPage";
 
-import back1 from "./assets/cards/bg_1.png";
-import back2 from "./assets/cards/bg_2.png";
-import back3 from "./assets/cards/bg_3.png";
-import back4 from "./assets/cards/bg_4.png";
-import back5 from "./assets/cards/bg_5.png";
+import back1 from "./assets/cards/bg_11.png";
+import back2 from "./assets/cards/bg_12.png";
+import back3 from "./assets/cards/bg_14.png";
 
-import card1 from "./assets/cards/1_lovers.png";
-import card2 from "./assets/cards/2_wheel.png";
-import card3 from "./assets/cards/3_star.png";
+
+import card1 from "./assets/cards/11_lovers.png";
+import card2 from "./assets/cards/12_lovers.png";
+import card3 from "./assets/cards/13_lovers.png";
 
 import card1fancy from "./assets/cards/fancy/1_lovers.jpg";
 import card2fancy from "./assets/cards/fancy/2_wheel.jpg";
 import card3fancy from "./assets/cards/fancy/3_star.png";
 
 // Import heart images
-import heart1 from "./assets/hearts/heart_lila.png"; // Adjust paths as needed
-import heart2 from "./assets/hearts/heart_mov.png";
-import heart3 from "./assets/hearts/heart_pink.png";
-import heart4 from "./assets/hearts/heart_red.png";
-import heart5 from "./assets/hearts/heart_red_light.png";
+import heart1 from "./assets/hearts/heart_red5.png"; // Adjust paths as needed
+import heart2 from "./assets/hearts/heart_red5.png";
+import heart3 from "./assets/hearts/heart_red5.png";
+import heart4 from "./assets/hearts/heart_red5.png";
+import heart5 from "./assets/hearts/heart_red5.png";
 
 import "./index.css";
 import { Snowfall } from "react-snowfall";
@@ -47,18 +46,17 @@ const cards: Card[] = [
   {
     front: card1,
     message:
-      "They capture our deep, heartfelt connection—the magic that happens when two souls truly meet.",
+      " Wkwkwk… lucu sih kalau diinget. Awal komunikasi kita aja udah absurd bgtt. Aku cuma nanya soal almet apaan, eh kamu malah jawab UGM. Emang ye 😑 Nyebelin, tapi ya entah kenapa lucu sih. Terus lucunya lagi, nggak lama kamu kena karma sendiri. Almet-nya malah nggak kebawa pas sesi foto. Ya udah, gw puasin ketawa. wkwkwk. Tapi justru dari situ momenya dpt bgt jadi cerita yg gk bkal dilupain wkwkwk.",
   },
   {
     front: card2,
     message:
-      "This reminds us that fate has its own beautiful plan, spinning our lives together with twists and turns that only make our bond stronger.",
+      "Terus inget nggk pas abis KKN. Aku masih nggak bisa naik motor, eh tiba-tiba Nana ngajak bakar-bakar ke rumahnya. Pas liat maps… behh jauh banget. Langsung tuh gw mikir, “boncos nih aing” wkwk. Awalnya mau naik Maxim, tapi kamu ngechat, nawarin bareng ama si itu trus kmu naik motor sama Wiwi. Kaget dong. Aku bisa aj sebenarnya naik maxim, tapi kamu malah kekeh ngebantu bareng si itu aj. Cuman yaa karena gw gak enakan klo ak bareng ama si itu jdinya kalian nggk berdua kek ganggu gtu. Akhirnya nekat  tuh belajar naik motor wkwkw. Izin ke ortu di sekitar komplek doang , tapi malah kubawa jauh biar cpat bisa. Modal nekat sama nggak enakan doang tuh wkwkwk. Dan entah gimana, malah bisa. Jujur, makasih bnyak ak di momen itu. Kalau nggak karena itu, mungkin sampai sekarang aku masih nggak bisa naik motor. Wkwk.",
   },
   {
     front: card3,
     message:
-      "It shines with hope and endless dreams, lighting the way toward a future as bright and beautiful as the love we share.",
-  },
+      "Dan dari semua pengalaman penuh warna itu, aku banyak belajar. Pelan-pelan, aku ngerasa ada perubahan. Ego yang dulu tinggi, sekarang jadi lebih tenang. Lebih damai. Entah kenapa, aku jadi lebih fokus ngelakuin hal-hal baru. Hal yang dulu nggak pernah aku coba… sekarang malah aku jalanin.",},
 ];
 
 type Page =
@@ -86,7 +84,7 @@ export const App = () => {
   const [cardStyle, setCardStyle] = useState<"regular" | "fancy">("regular");
   const [visitedCharms, setVisitedCharms] = useState<Set<string>>(new Set());
 
-  const decks = [back1, back2, back3, back4, back5];
+  const decks = [back1, back2, back3];
 
   const regularCards = cards.map((card) => card.front);
   const fancyCards = [card1fancy, card2fancy, card3fancy];
@@ -97,7 +95,7 @@ export const App = () => {
 
   const handleDeckSelect = (deckImage: string) => {
     setSelectedDeck(deckImage);
-    setCurrentPage("style-select");
+    setCurrentPage("reading-intro");
   };
 
   const handleStyleSelect = (style: "regular" | "fancy") => {
@@ -160,13 +158,13 @@ export const App = () => {
             <button
               onClick={handleNextCard}
               disabled={!isFlipped}
-              className={`px-6 py-2 rounded-lg transition-all ${
+              className={`px-6 py-2 rounded-lg transition-all font-bold text-white ${
                 !isFlipped
                   ? "bg-neutral-content text-content cursor-not-allowed"
                   : "bg-primary text-primary-content cursor-pointer"
               }`}
             >
-              {currentCard === cards.length - 1 ? "Continue" : "Next Reading"}
+              {currentCard === cards.length - 1 ? "Lanjut" : "Selanjutnya"}
             </button>
           </div>
         );
