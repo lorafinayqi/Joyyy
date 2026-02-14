@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, useRef } from "react";
 import { CardRevealer } from "./components/CardRevealer";
 import Welcome from "./components/Welcome";
 import LastPage from "./components/LastPage";
@@ -13,7 +13,7 @@ import FinalReveal from "./components/FinalReveal";
 import PromisesPage from "./components/PromisesPage";
 import ValentinePage from "./components/ValentinePage";
 import CongratulationsPage from "./components/CongratulationsPage";
-
+import bgm from "./assets/audio/glue-sng.mp3";
 import back1 from "./assets/cards/bg_11.png";
 import back2 from "./assets/cards/bg_12.png";
 import back3 from "./assets/cards/bg_14.png";
@@ -80,12 +80,35 @@ export const App = () => {
   const [currentCard, setCurrentCard] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [hearts, setHearts] = useState<HTMLImageElement[]>([]);
-  const [selectedDeck, setSelectedDeck] = useState(back1); // Default deck
+  const [selectedDeck, setSelectedDeck] = useState(back1);
   const [cardStyle, setCardStyle] = useState<"regular" | "fancy">("regular");
   const [visitedCharms, setVisitedCharms] = useState<Set<string>>(new Set());
 
-  const decks = [back1, back2, back3];
+  // ✅ AUDIO REF
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
+  // ✅ PLAY SAAT LAYAR DISENTUH / DIKLIK
+  useEffect(() => {
+    const startAudio = () => {
+      if (audioRef.current) {
+        audioRef.current.volume = 0.5; // optional atur volume
+        audioRef.current.play().catch(() => {});
+      }
+
+      window.removeEventListener("click", startAudio);
+      window.removeEventListener("touchstart", startAudio);
+    };
+
+    window.addEventListener("click", startAudio);
+    window.addEventListener("touchstart", startAudio);
+
+    return () => {
+      window.removeEventListener("click", startAudio);
+      window.removeEventListener("touchstart", startAudio);
+    };
+  }, []);
+
+  const decks = [back1, back2, back3];
   const regularCards = cards.map((card) => card.front);
   const fancyCards = [card1fancy, card2fancy, card3fancy];
 
@@ -211,6 +234,9 @@ export const App = () => {
 
   return (
     <>
+      {/* ✅ AUDIO ELEMENT */}
+      <audio ref={audioRef} src={bgm} loop />
+
       <Snowfall
         style={{
           position: "fixed",
@@ -226,6 +252,7 @@ export const App = () => {
         opacity={[0.05, 0.2]}
         rotationSpeed={[-0.5, 0.5]}
       />
+
       <div className="min-h-screen w-full flex items-center justify-center relative z-10">
         {renderContent()}
       </div>
