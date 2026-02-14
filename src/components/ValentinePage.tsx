@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import valentineGif from "../assets/gif/valentine.gif"; // You'll need to add this gif
+import valentineGif from "../assets/gif/cat.gif"; // You'll need to add this gif
 
 interface ValentinePageProps {
   onNext: () => void;
@@ -63,7 +63,7 @@ const ValentinePage = ({ onNext }: ValentinePageProps) => {
           onClick={onNext}
           className="btn btn-primary px-8"
         >
-          Yes!
+          Iyaaa!
         </button>
 
         <button
@@ -76,7 +76,7 @@ const ValentinePage = ({ onNext }: ValentinePageProps) => {
           onMouseEnter={moveNoButton}
           onClick={moveNoButton}
         >
-          No
+          Nggk biasa aj
         </button>
       </div>
     </div>

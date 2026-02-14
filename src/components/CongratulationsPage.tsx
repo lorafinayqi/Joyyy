@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Confetti from "react-confetti";
-import gift from "../assets/gif/gift.gif"; // Add a gift gif to your assets
+import gift from "../assets/gif/gifcho.gif"; // Add a gift gif to your assets
 
 interface CongratulationsPageProps {
   onNext: () => void;
@@ -34,12 +34,8 @@ const CongratulationsPage = ({ onNext }: CongratulationsPageProps) => {
       />
 
       <h1 className="text-4xl text-primary font-bold mb-8 text-center animate-fade-in">
-        Congratulations! 🎉
+        Yeyy!! Nih coklat virtual 🍫 makasih udah baca sampai sini wkwk 😆
       </h1>
-
-      <h2 className="text-2xl text-primary mb-8 text-center animate-fade-in">
-        You now have a Valentine! ❤️
-      </h2>
 
       <img
         src={gift}

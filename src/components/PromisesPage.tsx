@@ -10,14 +10,12 @@ const PromisesPage = ({ onNext }: PromisesPageProps) => {
   const [showNextButton, setShowNextButton] = useState(false);
 
   const promises = [
-    "I promise to always support and uplift you.",
-    "I promise to continue growing together.",
-    "I promise to make you smile every day.",
-    "I promise to be your partner in every adventure.",
-    "I promise to cherish every moment with you.",
-    "I promise to love you more with each passing day.",
-    "I promise to be your safe haven.",
-    "I promise to choose you, every single day.",
+    "Jujur aja, awalnya aku biasa aja, nggak terlalu ekspektasi tinggi",
+    "Cuman kali ini beda bgt sihh",
+    "Kerjanya super duper lebih mendingan daripada sebelumnya",
+    "Yang dimana tempatnya tuh luas bgt jadi enak mau kesana kemari",
+    "Truss juga disitu malah dkasi makan, itu pun bebas mau ngambil sebanyak apapun dan juga enak poll",
+    "Lalu pas kita mau pulangan kukira bakal lama bgt kan kelarnya kek perlu closingan dlu, ehh malah cpat bgt",
   ];
 
   useEffect(() => {
@@ -54,7 +52,7 @@ const PromisesPage = ({ onNext }: PromisesPageProps) => {
     >
       {/* <Flower /> */}
       <h1 className="text-3xl text-primary font-bold mb-12">
-        My Promises to You
+        Aku kerja di tempat baru
       </h1>
 
       <div className="w-full max-w-2xl">
@@ -80,13 +78,13 @@ const PromisesPage = ({ onNext }: PromisesPageProps) => {
           }}
           className="btn btn-primary mt-12 animate-fade-in"
         >
-          Now the question is...
+          Terakhir..
         </button>
       )}
 
       {!showNextButton && currentPromiseIndex < promises.length && (
         <div className="text-sm text-gray-500 mt-12 animate-pulse">
-          Tap to continue
+          Tekan dimana saja
         </div>
       )}
     </div>
